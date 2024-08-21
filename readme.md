@@ -14,3 +14,10 @@ se nenhum dos casos forem atendidos imprimir: aguardando resultado dos demais ca
 
 Deve ser selecionado no maximo 5 candidatos para a entrevista onde o salário pedido seja menor ou igual ao salario base
 
+## passo 3
+
+Deve se imprimir uma lista com os funcionarios selecionados para que o RH entre em contato
+
+## passo 4
+
+O RH deve entrar em contato com o candidato selecionado para agendar uma entrevista

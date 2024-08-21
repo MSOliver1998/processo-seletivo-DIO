@@ -3,7 +3,7 @@ import java.util.concurrent.ThreadLocalRandom;
 class Main{
     public static void main(String[] args){
         System.err.println("processo seletivo!");
-        selecaoDeCandidatos();
+        imprimirSelecao();
     }
 
     static void analisarCandidato(double salario){
@@ -14,6 +14,18 @@ class Main{
             System.err.println("ligar para o candidato com a contra-proposta");
         }else{
             System.err.println("aguardando o resultado dos demais candidatos");
+        }
+    }
+
+    static void imprimirSelecao(){
+        String[] selecionados={ "Matheus","André","Ana","Júlia","Pablo"};
+        
+        /* for(int i=0;i<selecionados.length;i++){
+            System.err.println("O candidato número " + (i+1) + " é " + selecionados[i]);
+        }  */
+
+        for(String candidato: selecionados){
+            System.err.println("o candidato " + candidato + " foi selecionado!");
         }
     }
 
