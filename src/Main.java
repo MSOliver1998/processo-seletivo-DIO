@@ -1,9 +1,9 @@
+import java.util.concurrent.ThreadLocalRandom;
+
 class Main{
     public static void main(String[] args){
         System.err.println("processo seletivo!");
-        analisarCandidato(1900);
-        analisarCandidato(2200);
-        analisarCandidato(2000);
+        selecaoDeCandidatos();
     }
 
     static void analisarCandidato(double salario){
@@ -15,5 +15,25 @@ class Main{
         }else{
             System.err.println("aguardando o resultado dos demais candidatos");
         }
+    }
+
+    static void selecaoDeCandidatos(){
+        String[] candidatos={"Felipe","Matheus","Marcos","Marcia","Maria","Júlia","Ana","Suzana","Fernanda","Bruna","Paula","Juliana","Pablo"};
+        int candidatosSelecionados=0;
+        int candidato=0;
+        while (candidatosSelecionados<5 && candidato<candidatos.length-1) {
+            String candidatoName=candidatos[candidato];
+            double salarioPretendido=salarioPretendido();
+            System.err.println("ocandidato " + candidatoName + " solicitou " + salarioPretendido);
+            if(salarioPretendido<2000.0){
+                System.err.println("o candidato " + candidatoName + " foi selecionado ");
+                candidatosSelecionados ++;
+            }
+            candidato ++;
+        }
+    }
+
+    static Double salarioPretendido(){
+        return ThreadLocalRandom.current().nextDouble(1800,2200);
     }
 }
