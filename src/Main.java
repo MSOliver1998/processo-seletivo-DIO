@@ -1,9 +1,29 @@
 import java.util.concurrent.ThreadLocalRandom;
+import java.util.Random;
 
 class Main{
     public static void main(String[] args){
         System.err.println("processo seletivo!");
-        imprimirSelecao();
+        String[] selecionados={ "Matheus","André","Ana","Júlia","Pablo"};
+        for(String candidato: selecionados){
+            int tentativas=1;
+            boolean continuarTentando=true;
+
+            do{
+                continuarTentando=!chamar(candidato);
+                if(continuarTentando==false){
+                    System.err.println("Conseguimos o contato com o candidato " + candidato +  " após " + tentativas + " tentativas");
+                }else{
+                    tentativas++;
+                }
+
+            }while(tentativas<3 && continuarTentando==true);
+            
+            if(tentativas==3 && continuarTentando==true){
+                System.err.println("Não conseguimos contato com o candidato " + candidato);
+            }
+        }
+
     }
 
     static void analisarCandidato(double salario){
@@ -43,6 +63,10 @@ class Main{
             }
             candidato ++;
         }
+    }
+
+    static boolean chamar(String candidato){
+        return new Random().nextInt(3)==1;
     }
 
     static Double salarioPretendido(){
